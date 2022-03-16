@@ -6,7 +6,6 @@ import textract
 import title
 import input_field 
 import output_field
-
 import re
 import string
 import pandas as pd
@@ -18,14 +17,12 @@ from sklearn.ensemble import RandomForestClassifier
 st.write("""This app predicts the Job Cateogry For the applicants' CV""")
 st.sidebar.header("USER INPUT PARAMETERS")
 model = pickle.load(open('rf_model.pkl','rb'))
-def predict(Resume):
+def predict(prediction):
     #data = {'Resumes',Resume} 
-    data = pd.DataFrame(Resume)  
+    data = pd.DataFrame(Resumes,cleaned_resume)  
     prediction = model.predict([data])
-    
     return int(prediction)
+    
 
-if __name__=='__predict__':
-    predict()
     
 
