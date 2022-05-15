@@ -4,7 +4,7 @@ import textract
 import re
 import string
 Resume = st.sidebar.file_uploader("Upload your input pdf file", type=["pdf"])
-global to_text
+global to_text 
 def user_input_features():
     #Resume = st.sidebar.file_uploader("Upload your input pdf file", type=["pdf"])
     #if Resume is not None:
@@ -32,12 +32,9 @@ def user_input_features():
         # Remove punctuation
         to_text = to_text.translate(str.maketrans('','',string.punctuation))
         #st.write(to_text)
-        
+        return to_text
 user_input_features()
+
 st.subheader("USER INPUT PARAMETERS")
-#st.write(to_text)
 
-#data = {'Resume' :input_df             }
- #   features = pd.DataFrame(data,index=[0])
 
-  #  return features
