@@ -91,8 +91,6 @@ python-dateutil==2.8.1
 python-pptx==0.6.21
 PyYAML==5.3.1
 rsa==4.7.2
-Rtree==0.9.4
-ruamel_yaml==0.15.87
 scikit-image==0.17.2
 scikit-learn==1.1.0
 scipy==1.5.2
