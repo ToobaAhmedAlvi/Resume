@@ -20,7 +20,6 @@ pipreqs
 plotly
 PyPDF2
 PyYAML
-re==2.2.1
 scikit-learn
 scipy
 seaborn
