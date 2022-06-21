@@ -25,7 +25,6 @@ scipy
 seaborn
 statsmodels
 streamlit
-string
 textract
 xgboost
 yellowbrick
