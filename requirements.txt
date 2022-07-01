@@ -5,7 +5,7 @@ matplotlib
 pandas
 pillow
 PyPI
-PyPDF2
+PyPDF2==1.26.0
 PDFMiner
 scikit-learn
 sklearn
