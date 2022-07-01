@@ -4,7 +4,9 @@
 matplotlib
 pandas
 pillow
+PyPI
 PyPDF2
+PDFMiner
 scikit-learn
 sklearn
 streamlit
