@@ -69,8 +69,9 @@ elif prediction ==1:
     st.write("YOUR CV MATCHES DATA ANALYST")
 elif prediction ==2:
     st.write("YOUR CV MATCHES JAVA DEVELOPER")
-else:
+elif prediction ==3:
     st.write("YOUR CV MATCHES PROJECT MANAGER")
-    
+else:
+    st.write("Sorry,Your CV didnot match any of the available job openings") 
 
 

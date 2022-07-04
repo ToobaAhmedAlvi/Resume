@@ -57,13 +57,16 @@ terms = {
         
         'JAVADeveloper':['2 years experience ','JAVA','developer','development','rest','soap','api','REST','SOAP','API','Web Services','database structures',
                       'statistical analysis','analytical mindset','problem solving skills','api','application programming interface',
-                      'verbal communication','excellent written skills','Java Programming Language','Ability to work','Software Engineeing','Computer Science',
-                      'Masters in CS','fast pace environment','Bachelors','programming','coding','HTML','object oriented programming','OOP','java',
-                      'java developer'],
+                      'verbal communication','excellent written skills','Java Programming Language','Ability to work','Software Engineeing','Computer Science','Masters in CS','fast pace environment','Bachelors','programming','coding','HTML','object oriented programming','OOP','java','java developer'],
+    
         'DataAnalyst': [ 'model managment','database management','python','R','Data Science','Machine Learning','pandas','statistical analysis','analytical mindset','problem solving skills','Tableau','Hadoop',
-                      'verbal communication','excellent written skills','SQL',' Programming Language','Ability to work','Software Engineeing','Computer Science','Masters in CS','fast pace environment','Bachelors','programming','coding','HTML','object oriented programming','OOP','java','python developer']
+                      'verbal communication','excellent written skills','SQL',' Programming Language','Ability to work','Software Engineeing','Computer Science','Masters in CS','fast pace environment','Bachelors','programming','coding','HTML','object oriented programming','OOP','java','python developer','python','streamlit']
     ,
-    'ProjectManager':[]
+    'ProjectManager':['Team Lead','Team Work','Milestone','Communication','Risk Management','MS office','Agile','3 years of experience',
+                     'SAP Training ','PMP Certification','MS Excel','Bachelors','MS Word','verbal skills','time management',
+                      'resource planning','Sprint','Project','Issues','Masters'
+                     
+                     ]
     
     
             
@@ -75,7 +78,7 @@ analyst = 0
 manager = 0
 # Create an empty list where the scores will be stored
 scores = []
-
+st.write(terms.keys())
 # Obtain the scores for each area
 for area in terms.keys():
     if area == 'ApplicationConsultant':
@@ -83,24 +86,26 @@ for area in terms.keys():
             if word in to_text:
                 consultant+=1
         scores.append(consultant)
-    elif area == 'DataAnalyst':
-        for word in terms[area]:
-            if word in text:
-                analyst+=1
-        scores.append(analyst)
-    
-    elif area == 'ProjectManager':
-        for word in terms[area]:
-            if word in text:
-                manager+=1
-        scores.append(manager)
-     
-      
-    else:
+    elif area == 'JAVADeveloper':
         for word in terms[area]:
             if word in to_text:
-                developer +=1
+                developer+=1
         scores.append(developer)
+
+    elif area == 'DataAnalyst':
+        for word in terms[area]:
+            if word in to_text:
+                analyst+=1
+        scores.append(analyst)
+     
+      
+    elif area =='ProjectManager':
+        for word in terms[area]:
+            if word in to_text:
+                manager +=1
+        scores.append(manager)
+    else:
+        scores = 0
 summary = pd.DataFrame(scores,index=terms.keys(),columns=['score']).sort_values(by='score',ascending=False)
 st.write(summary)
 pie = plt.figure(figsize=(10,10))
